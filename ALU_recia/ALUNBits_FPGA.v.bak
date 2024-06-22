@@ -1,0 +1,45 @@
+module ALUNBits_FPGA (
+
+	input				[2:0} addra_i,
+	input				[2:0} addrb_i,
+	input 					c_i,
+	input 					invert_i,
+	input				[2:0] operacion_i
+	
+	output			[6:0] displ0_o,
+	output			[6:0] displ1_o,
+	output			[6:0] displ2_o,
+	output			[6:0] displ3_o,
+	output			[6:0] displ4_o,
+	output			[6:0] displ5_o,
+	output			[6:0] displ6_o,
+	output			[6:0] displ7_o
+
+);
+
+	wire [31:0] salida_o;
+
+
+	module ALUNBits #(
+		N 			(32)
+	)
+	(
+		.a_i					(),
+		.b_i					(),
+		.c_i					(),
+		.invert_i			(),
+		.less_i				(),
+		.operacion_i		(),
+		.salida_o			(alida_o),
+		.c_o					()
+
+	);
+
+	module Disp7segs (
+
+		.entrada_i		(salida[3:0]),
+		.salida_o		(disp0_o)
+
+	);
+
+endmodule 

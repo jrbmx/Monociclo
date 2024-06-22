@@ -1,0 +1,18 @@
+module memoria_b (
+
+	input 		[2:0] addr_i,
+	output reg	[31:0] operador_o 
+
+);
+
+	//definicion de la memoria
+	reg 			[31:0] memory [7:0]; //Parametro de profundidad - memory - luego parametro de ancho
+	
+	initial
+	begin
+		memory[0] = 32'b100;
+		memory[1] = 32'b11110000111100001111000011110000;
+		memory[2] = 32'b11001110101001110010101110100011;
+	end
+
+endmodule 

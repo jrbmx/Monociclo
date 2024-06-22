@@ -1,0 +1,29 @@
+module ALU (
+
+	input a_i,
+	input b_i,
+	input c_i,
+	input invert_i,
+	input operacion_i,
+	output salida_o
+
+);
+
+	wire ab1_w;
+	wire ab2_w;
+	
+	//AND Fate
+	assign ab1_w = a_i & selb_w;
+	//OR Gate
+	assign ab2_w = a_i | selb_w;
+	
+	//Sumador - Restador
+	wire nob_w;
+	assign nob_w = ~b_i;
+	wire selb_w;
+	assign selb_w = (invert_i) ? nob_w : b_i;
+	
+	//Selector 2 - 1
+	assign salida_o = (operacion_i) ? ab2_w : ab1_w;
+	
+endmodule 

@@ -1,0 +1,10 @@
+module ALU (
+	input 	a_i,
+	input 	b_i,
+	input 	c_i,
+	input 	invert_i,
+	input 	less_i,
+	input 	[2:0] operacion_i,
+	output 	reg salida_o,
+	output 	c_o
+);
