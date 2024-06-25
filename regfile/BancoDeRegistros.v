@@ -16,6 +16,20 @@
 //Vamos a la ALU y agregamos uno por uno todos los archivos
 //pertenecientes a la ALU
 //Memorias y displays de 7 segmentos NOOO
+*/
+Grupo: 5CV3 
+Proyecto: BancoDeRegistros
+Archico: BancoDeRegistros.v
+Equipo: 6
+Integrantes: Díaz Ortiz Brandon Aldair
+González Rosales Brenda Yareth
+Hernández Suarez Diego Armando
+Pérez Aguilar Dulce Evelyn 
+Romero Barrientos Jonathan Rubén
+Descripción: Banco de registros donde se puede leer desde dos registros diferentes simultáneamente,
+y se puede escribir en un registro seleccionado (rd_i) cuando la señal de escritura (wren_i)
+está activa y en el flanco de subida del reloj
+*/
 
 module BancoDeRegistros(
 	input 	    	 clk_i,
