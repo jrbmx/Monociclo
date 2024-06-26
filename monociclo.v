@@ -1,4 +1,17 @@
 //Encabezado
+*/
+Grupo: 5CV3 
+Nombre Proyecto: monociclo
+Nombre Archivo: monociclo.v
+Equipo: 6
+Integrantes: Díaz Ortiz Brandon Aldair
+González Rosales Brenda Yareth
+Hernández Suarez Diego Armando
+Pérez Aguilar Dulce Evelyn 
+Romero Barrientos Jonathan Rubén
+Descripción: incluye las etapas necesarias para ejecutar instrucciones:
+Fetch, Decode, Execute, Memory Access y Write Back.
+*/
 module monociclo (
 	input					clk_i,
 	input					rst_ni,
