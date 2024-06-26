@@ -95,7 +95,6 @@ module ALUNBits #(
 	always @(*) begin
 		final_o = sol_o;
 		zeroflag_o = ~(|(sol_o));
-		unoflag_o = ~(&(sol_o));
 	end
 
 endmodule 
