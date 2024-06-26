@@ -20,6 +20,7 @@ module monociclo (
 	//SECCION DE DECLARACION DE SEÑALES
 	reg		[31:0]	pc_r;
 	wire 		[3:0]		id_alu_operacion_o;
+	wire 		[2:0]		id_branch_ctrl_o;
 	wire		[31:0]	pcnext_w;
 	wire		[31:0]	if_inst_o;
 	wire					id_alusrc_o;
@@ -115,7 +116,8 @@ module monociclo (
 		.f7_i					(if_inst_o[30]),
 		.f3_i					(if_inst_o[14:12]),
 		.aluop_i				(id_aluop_o),
-		.aluoperacion_o	(id_alu_operacion_o)
+		.aluoperacion_o	(id_alu_operacion_o),
+		.branch_ctrl_o			(id_branch_ctrl_o),
 	);
 	
 	sll1bit sll1(
@@ -124,13 +126,13 @@ module monociclo (
 	);
 	
 	assign branch_pc_w = ex_sll_dato_o + pc_r;
-	assign pcsrc_w= id_branch_o & ex_zeroflag_o;
-	assign pcbranchnext_w = (pcsrc_w)? branch_pc_w :pcnext_w; 
+	#assign pcsrc_w= id_branch_o & ex_zeroflag_o;
+	
 	//concectar 
 //	assign wb_resultado_o = ex_resultado_o;
 
 	//Multiplexor para tipo J
-	assign tipo_j_w = (id_tipoJ_o)? wb_resultado_o : pcnext_w; 
+	#assign tipo_j_w = (id_tipoJ_o)? wb_resultado_o : pcnext_w; 
 	
 	
 	//Conexión de la ALU
@@ -148,8 +150,18 @@ module monociclo (
 		.c_o					(c_o),
 		.zeroflag_o			(ex_zeroflag_o)
 	);
-	
-	
+
+	tipoBranch (
+    	.branch_i			(id_branch_o),
+    	.branch_ctrl_i		(id_branch_ctrl_o),
+    	.tipo_j_i			(id_tipoJ_o),
+    	.zero_flag_I		(ex_zeroflag_o),
+    	.bit_m_i			(ex_dato_o[0]),
+    	.pc_source_o		(pcsrc_w)
+	);
+
+	assign pcbranchnext_w = (pcsrc_w)? branch_pc_w :pcnext_w; 
+
 	//MEMORY ACCESS STAGE
 	dcache  dcache_u0(
 		.clk_i			(clk_i),
