@@ -1,4 +1,17 @@
 //Encabezado
+*/
+Grupo: 5CV3 
+Nombre Proyecto: monociclo
+Nombre Archivo: monociclo.v
+Equipo: 6
+Integrantes: Díaz Ortiz Brandon Aldair
+González Rosales Brenda Yareth
+Hernández Suarez Diego Armando
+Pérez Aguilar Dulce Evelyn 
+Romero Barrientos Jonathan Rubén
+Descripción: incluye los case para la selección de tipo de instrucción, así como la operación a seleccionar
+*/
+
 module AluControl(
 	input f7_i,
 	input [2:0] f3_i,
