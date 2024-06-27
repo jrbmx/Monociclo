@@ -1,4 +1,4 @@
-*/	Grupo: 5CV3 	Proyecto: ExteniónDeSigno	Archivo: extensiodesigno.v
+/*	Grupo: 5CV3 	Proyecto: ExteniónDeSigno	Archivo: extensiodesigno.v
 Equipo: 6
 Integrantes: 
 Díaz Ortiz Brandon Aldair			González Rosales Brenda Yareth
