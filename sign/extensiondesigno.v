@@ -1,4 +1,13 @@
-//Encabezado
+*/	Grupo: 5CV3 	Proyecto: ExteniónDeSigno	Archivo: extensiodesigno.v
+Equipo: 6
+Integrantes: 
+Díaz Ortiz Brandon Aldair			González Rosales Brenda Yareth
+Hernández Suarez Diego Armando			Pérez Aguilar Dulce Evelyn 
+Romero Barrientos Jonathan Rubén
+Descripción: El módulo extensiondesigno está parametrizado con IMM, 
+que define el número de bits para la extensión del valor inmediato
+*/
+
 module extensiondesigno #(
 parameter  IMM = 20
 )
@@ -24,7 +33,7 @@ parameter  IMM = 20
 				   inmediato_o = {{IMM{instruccion_i[31]}}, instruccion_i[31:20]};
 			7'b1100011: // Tipo B
 				   inmediato_o = {{IMM{instruccion_i[31]}}, instruccion_i[7], instruccion_i[30:25], instruccion_i[11:8] };
-			7'b1100011: // Tipo J
+			7'b1101111: // Tipo J
 				   inmediato_o = {{12{instruccion_i[31]}}, instruccion_i[19:12], instruccion_i[20], instruccion_i[30:21] };
 			default:
 					inmediato_o = 32'b0;
