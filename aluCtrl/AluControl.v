@@ -1,4 +1,13 @@
-//Encabezado
+/*	Grupo: 5CV3 	Proyecto: AluControl	Archivo: AluControl.v
+Equipo: 6
+Integrantes: 
+Díaz Ortiz Brandon Aldair			González Rosales Brenda Yareth
+Hernández Suarez Diego Armando			Pérez Aguilar Dulce Evelyn 
+Romero Barrientos Jonathan Rubén
+Descripción: Ees un control de ALU (Unidad Aritmética Lógica) que 
+genera señales de control para operaciones de la ALU basadas 
+en la entrada de la operación de la ALU (aluop_i).
+*/
 module AluControl(
 	input f7_i,
 	input [2:0] f3_i,
